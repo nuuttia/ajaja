@@ -51,6 +51,7 @@ app.get('/api/persons/:id', (request, response) => {
   if (person) {
     response.json(person)
   } else {
+    console.log('vituiks man')
     response.status(404).end()
   }
 })
