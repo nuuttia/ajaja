@@ -7,6 +7,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(morgan('tiny'))
+app.use(express.static('build'))
 
 let persons = [
   {
@@ -51,7 +52,6 @@ app.get('/api/persons/:id', (request, response) => {
   if (person) {
     response.json(person)
   } else {
-    console.log('vituiks man')
     response.status(404).end()
   }
 })
